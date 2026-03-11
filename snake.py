@@ -122,9 +122,15 @@ running = True
 
 while running:
 
-    clock.tick(8)
+    clock.tick(10)
 
-    for event in pygame.event.get():
+    # direction = right --> up --> left
+    # events = [up,left]
+    # for event in pygame.event.get():
+    events = pygame.event.get()
+    if events:
+        event = events[-1]
+
         if event.type == pygame.QUIT:
             running = False
 
